@@ -1,0 +1,33 @@
+<div class="card">
+  <article class="information">
+
+    <h3 class="title">
+      {{ product.productName }}
+    </h3>
+
+    <div class="items">
+      <div>
+        <label for="category">Category:&nbsp;</label>
+        <span id="category">{{ product.category }}</span>
+      </div>
+      <div>
+        <label for="price">Price:&nbsp;</label>
+        <span id="price">{{ product.price | currency:'EUR':'symbol':'1.2-2':'fr'}}</span>
+      </div>
+      <div>
+        <label for="price">Price TTC:&nbsp;</label>
+        <span id="price">{{ product | priceTTC | currency:'EUR':'symbol':'1.2-2':'fr'}}</span>
+      </div>
+      <div>
+        <label for="available_quantity">Available quantity:&nbsp;</label>
+        <span id="available_quantity">{{ product.quantity }}</span>
+      </div>
+    </div>
+
+    <div class="actions-container">
+      <app-quantity-counter [maxValue]="product.quantity"
+        (quantityChange)="this.quantity = $event"></app-quantity-counter>
+      <button class="btn-add" (click)="addToCart()" [disabled]="!product.quantity">Add</button>
+    </div>
+  </article>
+</div>

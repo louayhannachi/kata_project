@@ -1,0 +1,8 @@
+<div *ngIf="maxValue" class="counter">
+  <button class="btn" (click)="decrementQuantity()" [disabled]="quantity == 1">-</button>
+  <input class="qty-input" type="number" min="0" max="{{ maxValue }}" [(ngModel)]="quantity" />
+  <button class="btn" (click)="incrementQuantity()" [disabled]="quantity == maxValue">+</button>
+</div>
+<div *ngIf="!maxValue">
+  <span class="not-available">Not available</span>
+</div>

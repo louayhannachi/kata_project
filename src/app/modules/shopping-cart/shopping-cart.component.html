@@ -1,0 +1,62 @@
+<button class="btn-home" (click)="redirectToProducts()">
+  <i class="fa-solid fa-house"></i>
+  <span>Home</span>
+</button>
+
+<div *ngIf="(cartItems$ |async) as items">
+  <div *ngIf="items.length > 0" class="container">
+    <!-- <button (click)="clearCart()">Clear</button> -->
+    <div *ngFor="let item of items" class="card">
+      <article class="info">
+        <div>
+          <label for="name" title="Name">Name:</label>
+          <span id="name" title="{{item.product.productName}}">{{ item.product.productName }}</span>
+        </div>
+        <div>
+          <label for="qte" title="Quantity">Quantity:</label>
+          <span id="qte" title="{{item.purchasedQuantity}}">{{ item.purchasedQuantity }}</span>
+        </div>
+        <div>
+          <label for="taxes" title="Taxes">Taxes:</label>
+          <span id="taxes" title="{{ item.taxe | currency:'EUR':'symbol':'1.2-2':'fr' }}">{{ item.taxe |
+            currency:'EUR':'symbol':'1.2-2':'fr' }}</span>
+        </div>
+        <div>
+          <label for="priceHT" title="Unit Price HT">Unit Price HT:</label>
+          <span id="priceHT" title="{{ item.priceHT | currency:'EUR':'symbol':'1.2-2':'fr' }}">{{ item.priceHT |
+            currency:'EUR':'symbol':'1.2-2':'fr' }}</span>
+        </div>
+        <div>
+          <label for="priceTTC" title="Unit Price TTC">Unit Price TTC:</label>
+          <span id="priceTTC" title="{{ item.priceTTC | currency:'EUR':'symbol':'1.2-2':'fr' }}">{{ item.priceTTC |
+            currency:'EUR':'symbol':'1.2-2':'fr' }}</span>
+        </div>
+          <button class="btn-remove" title="Remove" (click)="removeFromCart(item.product.id)">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+      </article>
+    </div>
+
+    <div class="tot-card">
+      <article class="tot-info">
+        <div>
+          <label for="totPriceHT">TOTAL Price HT:</label>
+          <span id="totPriceHT">{{getTotalPriceHT(items) | currency:'EUR':'symbol':'1.2-2':'fr'}}</span>
+        </div>
+        <div>
+          <label for="totTaxes">TOTAL Taxes:</label>
+          <span id="totTaxes">{{getTotalTaxes(items) | currency:'EUR':'symbol':'1.2-2':'fr'}}</span>
+        </div>
+        <div>
+          <label for="totPriceTTC">TOTAL Price TTC:</label>
+          <span id="totPriceTTC">{{getTotalPriceTTC(items) | currency:'EUR':'symbol':'1.2-2':'fr'}}</span>
+        </div>
+      </article>
+    </div>
+
+  </div>
+  <div *ngIf="!items.length" class="empty">
+    <i class="fa-solid fa-store-slash"></i>
+    <span>EMPTY SHOPPING CART</span>
+  </div>
+</div>

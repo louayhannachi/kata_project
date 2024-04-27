@@ -1,0 +1,43 @@
+.qty-input {
+  width: 2vw;
+  border-radius: 20%;
+  border: none;
+  text-align: center;
+  font-family: "Font Awesome 6 Free";
+  font-size: x-small;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 20px;
+  border: 1px solid whitesmoke;
+  border-radius: 20%;
+  background-color: #04aa6d;
+  font-family: monospace;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.not-available {
+  font-weight: bold;
+    font-family: monospace;
+    color: #04aa6d;
+}

@@ -1,0 +1,131 @@
+.btn-home {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  margin: 0 1vw;
+  cursor: pointer;
+  height: 30px;
+  width: 90px;
+  border-radius: 12px;
+  font-family: "FontAwesome";
+  span {
+    margin-left: 10px;
+  }
+}
+
+.container {
+  display: grid;
+  gap: 35px;
+  padding: 4%;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 16px;
+  outline: 10px solid white;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  background-color: #ffedec;
+  border-radius: 16px;
+  padding: 1.5rem;
+  div {
+    display: grid;
+    width: 100%;
+  }
+  label {
+    font-weight: bold;
+    font-family: monospace;
+    font-size: large;
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  span {
+    font-family: monospace;
+    font-size: large;
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.btn-remove {
+  border-radius: 50%;
+  background-color: #aa0a04;
+  border: none;
+  color: white;
+  font-size: 1em;
+  margin: 0 1vw;
+  cursor: pointer;
+  height: 30px;
+  cursor: pointer;
+}
+
+.tot-card {
+  max-width: 300px;
+  height: 100%;
+  background-color: white;
+  border-radius: 16px;
+  outline: 10px solid white;
+}
+
+.tot-info {
+  display: grid;
+  align-items: center;
+  background-color: #ecffed;
+  border-radius: 16px;
+  padding: 1.5rem;
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    label {
+      font-weight: bold;
+      font-family: monospace;
+      font-size: large;
+    }
+    span {
+      font-family: monospace;
+      font-size: large;
+    }
+  }
+}
+
+.empty {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: xx-large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aa0a04;
+  padding: 1.5rem;
+}
+
+/* Media query for mobile mode */
+@media screen and (max-width: 640px) {
+  .info {
+    flex-direction: column;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+    label {
+      max-width: 90%;
+    }
+    span {
+      max-width: 90%;
+    }
+  }
+
+  .tot-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,25 @@
+<div>
+  <div class="product-action">
+    <div class="category">
+      <select #categorySelect class="custom-select" (change)="onCategoryChanged(categorySelect.value)">
+        <option hidden selected>Select a category</option>
+        <option *ngFor="let category of categories" value="{{category}}">{{category}}</option>
+      </select>
+      <button class="btn btn-reset" title="Reset Category" (click)="resetFilter(categorySelect)">
+        <i class="fa-solid fa-filter-circle-xmark icon-padding"></i>
+      </button>
+    </div>
+
+    <button class="btn btn-cart" title="Shopping Cart" (click)="redirectToCart()">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span *ngIf="(purchasedItem$ | async) as items">
+        {{ items.length > 0 ? items.length : '' }}
+      </span>
+    </button>
+    
+  </div>
+  <div *ngIf="products$ | async as products" class="product-container">
+    <app-product-card *ngFor="let product of products" [product]="product"
+      (onAddItem)="addItemToCart(product, $event)"></app-product-card>
+  </div>
+</div>
