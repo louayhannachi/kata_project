@@ -24,37 +24,37 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Project structure
 
-src
-├── app
-│   ├── core
-│   │   ├── guards       // Guards to protect routes
-│   │   ├── interceptors // HTTP interceptors
-│   │   ├── models       // Data models/interfaces
-│   │   └── services     // Global services
-│   ├── modules
-│   │   ├── feature1     // Feature module 1 
-│   │   │   ├── components // Components specific to Feature 1
-│   │   │   ├── services   // Services specific to Feature 1
-│   │   │   └── feature1.module.ts // Module file for Feature 1
-│   │   ├── feature2     // Feature module 2 
-│   │   │   ├── components // Components specific to Feature 2
-│   │   │   ├── services   // Services specific to Feature 2
-│   │   │   └── feature2.module.ts // Module file for Feature 2
-│   │   └── ...           // Additional feature modules
-│   ├── shared
-│   │   ├── components   // Reusable components 
-│   │   ├── directives   // Reusable directives
-│   │   ├── pipes        // Reusable pipes
-│   │   ├── models       // Shared models/interfaces
-│   │   └── services     // Shared services 
-│   ├── app-routing.module.ts // Main routing module
-│   ├── app.component.html   // Root component template
-│   ├── app.component.ts     // Root component logic
-│   ├── app.component.css    // Root component styles
-│   └── app.module.ts        // Root module file
-├── assets                    // Static assets (e.g., images, JSON files)
-├── environments              // Environment-specific configuration
-└── ...
+src  
+├── app  
+│   ├── core  
+│   │   ├── guards       // Guards to protect routes  
+│   │   ├── interceptors // HTTP interceptors  
+│   │   ├── models       // Data models/interfaces  
+│   │   └── services     // Global services  
+│   ├── modules  
+│   │   ├── feature1     // Feature module 1   
+│   │   │   ├── components // Components specific to Feature 1  
+│   │   │   ├── services   // Services specific to Feature 1  
+│   │   │   └── feature1.module.ts // Module file for Feature 1  
+│   │   ├── feature2     // Feature module 2   
+│   │   │   ├── components // Components specific to Feature 2  
+│   │   │   ├── services   // Services specific to Feature 2  
+│   │   │   └── feature2.module.ts // Module file for Feature 2  
+│   │   └── ...           // Additional feature modules  
+│   ├── shared  
+│   │   ├── components   // Reusable components   
+│   │   ├── directives   // Reusable directives  
+│   │   ├── pipes        // Reusable pipes  
+│   │   ├── models       // Shared models/interfaces 
+│   │   └── services     // Shared services   
+│   ├── app-routing.module.ts // Main routing module  
+│   ├── app.component.html   // Root component template  
+│   ├── app.component.ts     // Root component logic  
+│   ├── app.component.css    // Root component styles  
+│   └── app.module.ts        // Root module file  
+├── assets                    // Static assets   
+├── environments              // Environment-specific configuration  
+└── ...  
 
 ## Naming
 Every obsevable name will be followed by $ to distinguish them from other variables.
