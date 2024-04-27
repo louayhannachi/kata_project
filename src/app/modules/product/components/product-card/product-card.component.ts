@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProduct } from '../../models/product';
+import { PriceTTCPipe } from '../../../../shared/pipes/priceTTC.pipe';
 
 @Component({
   selector: 'app-product-card',
